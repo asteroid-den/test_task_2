@@ -16,3 +16,6 @@ class DatabaseMiddleware(BaseHTTPMiddleware):
         request.state.dao = dao
 
         return await call_next(request)
+
+        await dao.close()
+
